@@ -44,6 +44,7 @@
 								<li><a href="left-sidebar.html">Eventos</a></li>
 								<li><a href="right-sidebar.html">Grupos</a></li>
 								<li><a href="logout.php">Salir</a></li>
+								<li><a href="registroAlumno.php">Registrar alumno</a></li>
 							</ul>
 						</nav>
 
