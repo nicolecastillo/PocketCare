@@ -28,6 +28,7 @@
 <body>
 	
 	<?php if(!empty($user)): ?>
+<<<<<<< HEAD
 		<?php if($results['tipocuenta'] == 1): ?>
 			<body class="homepage is-preload">
 			<div id="page-wrapper">
@@ -43,8 +44,8 @@
 								<ul>
 									<li class="current"><a href="index.php">Inicio</a></li>
 									<li><a href="left-sidebar.html">Eventos</a></li>
-									<li><a href="grupos.php">Grupos</a></li>
 									<li><a href="registroAlumno.php">Registrar alumno</a></li>
+									<li><a href="grupos.php">Grupos</a></li>
 									<li><a href="logout.php">Salir</a></li>
 								</ul>
 							</nav>
@@ -102,6 +103,39 @@
 				<!-- Main -->
 					<section id="main">
 						<div class="container">
+=======
+		<body class="homepage is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<section id="header">
+
+					<!-- Logo -->
+						<a href="index.php"><img src="images/logo_1.png" alt="" /></a>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li class="current"><a href="index.php">Inicio</a></li>
+								<li><a href="left-sidebar.html">Eventos</a></li>
+								<li><a href="right-sidebar.html">Grupos</a></li>
+								<li><a href="logout.php">Salir</a></li>
+								<li><a href="registroAlumno.php">Registrar alumno</a></li>
+							</ul>
+						</nav>
+
+					<!-- Banner -->
+						<section id="banner">
+							<header>
+
+								<h2>Bienvenido. <?= $user['nombreusuario']; ?></h2>
+								<p>Has ingresado satisfactoriamente</p>
+							</header>
+						</section>
+
+					<!-- Intro -->
+						<section id="intro" class="container">
+>>>>>>> 6b06470aa2e8e03898bcfe5242402b1be78add95
 							<div class="row">
 								<div class="col-12">
 
