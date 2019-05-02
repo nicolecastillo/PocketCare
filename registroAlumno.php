@@ -4,7 +4,7 @@
 
 	if(!empty($_POST['Imagen']) && !empty($_POST['Nombre']) && !empty($_POST['Apellido']) && !empty($_POST['Apellido2']) && !empty($_POST['Edad']) && !empty($_POST['TipoSangre']) && !empty($_POST['Alergias'])){
 
-		if($_POST['TipoSangre'] != 'A+' || $_POST['TipoSangre'] != 'A-' || $_POST['TipoSangre'] != 'AB+' || $_POST['TipoSangre'] != 'AB-' || $_POST['TipoSangre'] != 'O+' || $_POST['TipoSangre'] != 'O-'){
+		if($_POST['TipoSangre'] != 'A+' && $_POST['TipoSangre'] != 'A-' && $_POST['TipoSangre'] != 'AB+' && $_POST['TipoSangre'] != 'AB-' && $_POST['TipoSangre'] != 'O+' && $_POST['TipoSangre'] != 'O-'){
 			$message = 'Tipo de sangre no válido (Utilice letras mayúsculas)';
     if ($_POST['Edad'] > 12) {
       $message = 'Edad no válida (La edad máxima son 12 años)';
@@ -46,13 +46,10 @@
 
 	<h1>Registrar Alumno</h1>
 
-	<form action="registroAlumno.php" method="POST">
-		<t> Seleccionar imagen del alumno </t>
-		<div class = "Imagen">
-			<form action="" method="post" enctype="multipart/form-data">
-				 <input type="file" name="imagen">
-			</form>
-		</div>
+	<form action="registroAlumno.php" method="post">
+		<t> Seleccionar imagen del alumno </t><br>
+
+		<input name = "Imagen" type="file" name="imagen">
 		<input name="Nombre" type="text" placeholder="Primer nombre">
 		<input name="Nombre2" type="text" placeholder="Segundo nombre (opcional)">
 		<input name="Apellido" type="text" placeholder="Primer Apellido">
@@ -60,7 +57,7 @@
 		<input name="Edad" type="text" placeholder="Edad">
 		<input name="TipoSangre" type="text" placeholder="Tipo de sangre">
 		<input name="Alergias" type="text" placeholder="Alergias">
-		<input type="submit" value="Submit">
+		<input type="submit" value="submit">
 	</form>
 
 </body>
