@@ -6,7 +6,7 @@
 
 //		move_uploaded_file($_POST['Imagen'], 'images/alumnos');
 
-		if($_POST['TipoSangre'] != 'A+' && $_POST['TipoSangre'] != 'A-' && $_POST['TipoSangre'] != 'AB+' && $_POST['TipoSangre'] != 'AB-' && $_POST['TipoSangre'] != 'O+' && $_POST['TipoSangre'] != 'O-'){
+		if($_POST['TipoSangre'] != 'A+' && $_POST['TipoSangre'] != 'A-' && $_POST['TipoSangre'] != 'AB+' && $_POST['TipoSangre'] != 'AB-' && $_POST['TipoSangre'] != 'O+' && $_POST['TipoSangre'] != 'O-' && $_POST['TipoSangre'] != 'B-' && $_POST['TipoSangre'] != 'B+'){
 			$message = 'Tipo de sangre no válido (Utilice letras mayúsculas)';
     if ($_POST['Edad'] > 12) {
       $message = 'Edad no válida (La edad máxima son 12 años)';
