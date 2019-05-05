@@ -34,11 +34,24 @@
 						<td><?php echo "<a href='ListaAlumnos.php?resultado=$valor'>" . $r['NOMBRE'] . "</a>"; ?></td>
 						<td><?php echo $r['ALUMNOS']; ?></td>
 						<td><?php echo $r['EVENTOS']; ?></td>
+						<td>
+							<a href="#" onclick="preguntar(<?php echo  $r["ID"]; ?>)">Eliminar</a>
+						</td>
 					</tr>
 				<?php
 				}
 				?>
 			</tbody>	
 		</table>
+
+		
+		<script type="text/javascript">
+		function preguntar(id){
+			if(confirm("¿Eliminar " + id + "?")){
+				window.location.href = "borrarGrupo.php?id=" + id;
+			}
+		}
+		</script>
+
 </body>
 </html>
