@@ -43,12 +43,11 @@
 							<nav id="nav">
 								<ul>
 									<li class="current"><a href="index.php">Inicio</a></li>
-<<<<<<< HEAD
+<!--!<<<<<<-- HEAD-->
 									<li><a href="left-sidebar.html">Eventos</a></li>
-=======
+<!--=======-->
 									<li><a href="calendario.html">Eventos</a></li>
-									<li><a href="registroAlumno.php">Registrar alumno</a></li>
->>>>>>> e38e2f31be8e98cdc0cadb4a7f2879bcc1b1109b
+<!-- >>>>>>> e38e2f31be8e98cdc0cadb4a7f2879bcc1b1109b-->
 									<li><a href="grupos.php">Grupos</a></li>
 									<li><a href="alumnos.php">Alumnos</a></li>
 									<li><a href="logout.php">Salir</a></li>
