@@ -43,7 +43,7 @@
 							<nav id="nav">
 								<ul>
 									<li class="current"><a href="index.php">Inicio</a></li>
-									<li><a href="left-sidebar.html">Eventos</a></li>
+									<li><a href="calendario.html">Eventos</a></li>
 									<li><a href="registroAlumno.php">Registrar alumno</a></li>
 									<li><a href="grupos.php">Grupos</a></li>
 									<li><a href="logout.php">Salir</a></li>
@@ -117,7 +117,7 @@
 						<nav id="nav">
 							<ul>
 								<li class="current"><a href="index.php">Inicio</a></li>
-								<li><a href="left-sidebar.html">Eventos</a></li>
+								<li><a href="calendario.html">Eventos</a></li>
 								<li><a href="right-sidebar.html">Grupos</a></li>
 								<li><a href="logout.php">Salir</a></li>
 								<li><a href="registroAlumno.php">Registrar alumno</a></li>
@@ -135,7 +135,6 @@
 
 					<!-- Intro -->
 						<section id="intro" class="container">
->>>>>>> 6b06470aa2e8e03898bcfe5242402b1be78add95
 							<div class="row">
 								<div class="col-12">
 
