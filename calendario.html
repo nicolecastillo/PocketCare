@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Calendario</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/moment.min.js"></script>
+	<!-- Full Calendar -->
+	<link rel="stylesheet" href="css/fullcalendar.min.css">
+	<script src="js/fullcalendar.min.js"></script>
+	<script src="js/es.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+
+	<header>
+		<a href="/PocketCare">Regresar</a>
+	</header>
+
+	<div class="container">
+		<div class="row">
+			<div class="col"></div>
+			<div class="col-7"><div id="Calendario"></div></div>
+			<div class="col"></div>
+		</div>
+	</div>
+	
+<script>
+	$(document).ready(function(){
+		$('#Calendario').fullCalendar({
+			header:{
+				left:'today,prev,next,Miboton',
+				center:'title',
+				right:'month,basicWeek,basicDay,agendaWeek,agendaDay'
+			},
+			customButtons:{
+				Miboton:{
+					text:"Botón 1",
+					click:function(){
+						alert("Acción del botón")
+					}
+					
+				}
+			},
+			dayClick:function(date,jsEvent,view){
+				alert("Valor seleccionado:"+date.format());
+				alert("Vista actual"+view.name);
+				$(this).css('background-color','red');
+				$("#exampleModal").modal();
+			},
+			eventSources:[{
+				events:[
+					{
+						title:'Evento 1, festival día de las madres',
+						descripcion:"Los niños presentarán bailables a sus mamás",
+						start:'2019-05-09',
+						color:"purple",
+						textColor:"white"
+					},
+					{
+						title:'Evento 2, día inhabil',
+						descripcion:"Descanso",
+						start:'2019-05-10',
+						end:'2019-05-12',
+					},
+					{
+						title:'Evento 3, regreso clases',
+						descripcion:"Los niños vuelven a la escuela",
+						start:'2019-05-13T08:30:00',
+						allDay:false,
+						color:"blue",
+						textColor:"white"
+					}
+				],
+				color:"pink",
+				textColor:"white"
+
+			}],
+			eventClick:function(calEvent,jsEvent,view){
+				$('#tituloEvento').html(calEvent.title);
+				$('#descripcionEvento').html(calEvent.descripcion);
+				$("#exampleModal").modal();
+			}
+			
+		});
+	});
+	
+
+</script>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="tituloEvento"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="descripcionEvento"></div>
+      </div>
+      <div class="modal-footer">
+      	<button type="button" class="btn btn-success">Agregar</button>
+      	<button type="button" class="btn btn-success">Modificar</button>
+      	<button type="button" class="btn btn-danger">Borrar</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+	
+</body>
+</html>
