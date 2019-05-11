@@ -35,10 +35,11 @@
 					$stmt = $conn->query($sql);
 					
 					while ($_POST = $stmt->fetch(PDO::FETCH_ASSOC)) {
+						$valor = $_POST['ID'];
 				?>
 						<tr >
 							<td><?php echo $_POST["ID"];?></td>
-							<td><?php echo $_POST["NOMBRE"];?></td>
+							<td><?php echo "<a href='ListaAlumnos.php?resultado=$valor'>" . $_POST["NOMBRE"] . "</a>"; ?></td>
 							<td><?php echo $_POST["ALUMNOS"];?></td>
 							<td><?php echo $_POST["EVENTOS"];?></td>
 							<td>
