@@ -30,7 +30,6 @@
 		</thead>
 		<tbody>
 			<?php
-<<<<<<< HEAD
 			foreach ($prueba as $re){	
 			?>
 				 <tr>
@@ -44,44 +43,10 @@
 
 			<?php } ?>
 		</tbody>	
-=======
-				$elAid = array();
-				$i = 0;
-			while ($_POST = $busqueda->fetch(PDO::FETCH_ASSOC)){
-				$elAid[$i] = $_POST['ID'];
-				echo "elAid:";
-				echo $elAid[$i];
-				echo "  i:" ;
-				echo $i;
-			?>
-				 <tr>
-					<td style="border:1px solid black; border-collapse: collapse;"><?php echo $_POST['NOMBRE']; ?></td>
-					<td style="border:1px solid black; border-collapse: collapse;"><?php echo $_POST['NOMBRE2']; ?></td>
-					<td style="border:1px solid black; border-collapse: collapse;"><?php echo $_POST['APELLIDO']; ?></td>
-					<td style="border:1px solid black; border-collapse: collapse;"><?php echo $_POST['APELLIDO2']; ?></td>
-					<td style="border:1px solid black; border-collapse: collapse;"><a href='#openModal'>Editar</a></td>
-				</tr>
-			<?php
-			$i++;
-			}
-			?>
-		</tbody>
->>>>>>> 24fb721653e4d30c8d78f141f0d84ec906c9191c
 	</tale>
 
 	<form action="registroAlumno.php">
 		<input type="submit" value="Registrar alumno">
 	</form>
-
-<<<<<<< HEAD
-=======
-	<div id="openModal" class="modalDialog">
-		<div>
-			<a href="#close" title="Close" class="close">X</a>
-			<h2>Alumno</h2>
-			<p><?php echo $elAid[$i];?></p>
-		</div>
-	</div>
->>>>>>> 24fb721653e4d30c8d78f141f0d84ec906c9191c
 </body>
 </html>
