@@ -1,4 +1,5 @@
 <?php
+
 	if(!empty($_POST['Nombre']) && !empty($_POST['Apellido']) && !empty($_POST['Apellido2']) && !empty($_POST['Edad']) && !empty($_POST['TipoSangre']) && !empty($_POST['Alergias'])){
 
 		if($_POST['TipoSangre'] != 'A+' && $_POST['TipoSangre'] != 'A-' && $_POST['TipoSangre'] != 'AB+' && $_POST['TipoSangre'] != 'AB-' && $_POST['TipoSangre'] != 'O+' && $_POST['TipoSangre'] != 'O-' && $_POST['TipoSangre'] != 'B-' && $_POST['TipoSangre'] != 'B+'){ ?>

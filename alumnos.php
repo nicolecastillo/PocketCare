@@ -39,6 +39,9 @@
 					<td style="border:1px solid black; border-collapse: collapse;"><?php echo $re['APELLIDO']; ?></td>
 					<td style="border:1px solid black; border-collapse: collapse;"><?php echo $re['APELLIDO2']; ?></td>
 					<?php echo"<td><a href='datosAlumno.php?elAid=" . $re['ID'] . "'>Editar</a></td>"; ?>
+					<td>
+						<a href="#" onclick="preguntar(<?php echo  $re["ID"]; ?>)">Eliminar</a>
+					</td>
 				</tr>		
 
 			<?php } ?>
@@ -48,5 +51,13 @@
 	<form action="registroAlumno.php">
 		<input type="submit" value="Registrar alumno">
 	</form>
+
+	<script type="text/javascript">
+		function preguntar(id){
+			if(confirm("¿Eliminar " + id + "?")){
+				window.location.href = "borrarAlumno.php?id=" + id;
+			}
+		}
+	</script>
 </body>
 </html>
