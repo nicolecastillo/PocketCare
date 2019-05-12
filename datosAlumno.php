@@ -46,7 +46,7 @@
 	$sql = "SELECT imagen FROM alumnos WHERE id =  '$_GET[elAid]'";
 	$sth = $db->query($sql);
 	$result=mysqli_fetch_array($sth);
-	echo '<p><img src="data:image/jpeg;base64,'.base64_encode( $result['imagen'] ).'"/></p>';?>
+	echo '<img src= "data:image/jpeg;base64,'.base64_encode( $result['imagen'] ).' " width = "20%" heigth="20%"/>';?>
 
 	<form action="guardarCambios.php" method="POST">
 		<input type="hidden" id="Id" name="Id" value="<?php echo $consulta['0'];?>">
