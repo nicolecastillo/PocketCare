@@ -69,22 +69,26 @@
 			<th width="500" style="border:1px solid black; border-collapse: collapse;">Segundo nombre</th>
 			<th width="500" style="border:1px solid black; border-collapse: collapse;">Apellido paterno</th>
 			<th width="500" style="border:1px solid black; border-collapse: collapse;">Apellido materno</th>
+			<th width="500" style="border:1px solid black; border-collapse: collapse;">Evaluacion</th>
 		</thead>
 		<tbody>
 			<?php
+			$valor;
 			foreach ($prueba as $re)
 			{
+				$valor = $re['ID'];
 			?>
 				<tr>
-					<td style="border:1px solid black; border-collapse: collapse;"><?php echo $re['NOMBRE']; ?></td>
+					<td style="border:1px solid black; border-collapse: collapse;"><?php echo $re['NOMBRE'];  ?></td>
 					<td style="border:1px solid black; border-collapse: collapse;"><?php echo $re['NOMBRE2']; ?></td>
 					<td style="border:1px solid black; border-collapse: collapse;"><?php echo $re['APELLIDO']; ?></td>
 					<td style="border:1px solid black; border-collapse: collapse;"><?php echo $re['APELLIDO2']; ?></td>
+					<td style="border:1px solid black; border-collapse: collapse;"><?php echo "<a href='evaluacionDiaria.php?identificador=$valor'>" . "Evaluar" . "</a>"; ?></td>
 				</tr>
 			<?php
 			}
 			?>
-		</tbody>	
+		</tbody>
 	</table>
 
 	<button id="btn1">Agregar alumno al grupo</button>
@@ -92,7 +96,7 @@
 	<div id ="myModal" class="modal">
 		<div class="modal-content">
 			<span class="close">x</span>
-			<form method="post">	
+			<form method="post">
 				<table style="border:1px solid black; border-collapse: collapse;">
 					<thead>
 						<th width="500" style="border:1px solid black; border-collapse: collapse;">Nombre</th>
@@ -101,10 +105,10 @@
 						<th width="500" style="border:1px solid black; border-collapse: collapse;">Apellido materno</th>
 					</thead>
 				<tbody>
-					
+
 						<?php
 						$busqueda2 = $conn->query("SELECT * FROM alumnos");
-						$prueba2 = $busqueda2->fetchAll(PDO::FETCH_ASSOC);  
+						$prueba2 = $busqueda2->fetchAll(PDO::FETCH_ASSOC);
 						foreach ($prueba2 as $res)
 						{
 						?>
@@ -113,15 +117,14 @@
 							<td style="border:1px solid black; border-collapse: collapse;"><?php echo $res['NOMBRE2']; ?></td>
 							<td style="border:1px solid black; border-collapse: collapse;"><?php echo $res['APELLIDO']; ?></td>
 							<td style="border:1px solid black; border-collapse: collapse;"><?php echo $res['APELLIDO2']; ?></td>
-							<?php echo "<td style='border:1px solid black; border-collapse: collapse;''><input type='radio' name= 'idk' value = " . $res['ID'] . "></td>"; ?>
 							</tr>
 						<?php
 						}
 						?>
-				</tbody>	
+				</tbody>
 				</table>
 				<?php
-					if(!empty($_POST['idk'])){ 
+					if(!empty($_POST['idk'])){
 						$sql = "INSERT INTO inscripciones (`CicloEcolar`, `IdAlumno`, `grupo`) VALUES('2019-I', '$_POST[idk]', '$aid')";
 						$stmt = $conn->prepare($sql);
 						if($stmt->execute()){

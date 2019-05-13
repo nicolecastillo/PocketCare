@@ -30,10 +30,10 @@
 				</tr>
 			</thead>
 			<tbody>
-				<?php 
+				<?php
 					$sql = "SELECT * FROM grupos";
 					$stmt = $conn->query($sql);
-					
+
 					while ($_POST = $stmt->fetch(PDO::FETCH_ASSOC)) {
 						$valor = $_POST['ID'];
 				?>
@@ -46,10 +46,10 @@
 								<a href="#" onclick="preguntar(<?php echo  $_POST["ID"]; ?>)">Eliminar</a>
 							</td>
 						</tr>
-						<?php	
+						<?php
 					}
 					?>
-				
+
 			</tbody>
 		</table>
 	</div>
@@ -58,16 +58,16 @@
 		<nav>
 				<a href="registroGrupo.php">Registrar grupo</a></li>
 
-		</nav> 
+		</nav>
 	</form>
-	
+
 	<script type="text/javascript">
 		function preguntar(id){
 			if(confirm("¿Eliminar " + id + "?")){
 				window.location.href = "borrarGrupo.php?id=" + id;
 			}
 		}
-		
+
 	</script>
 
 </body>
