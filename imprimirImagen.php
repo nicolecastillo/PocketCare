@@ -3,7 +3,7 @@
 	$message = '';
 
 	$db = mysqli_connect("localhost","root","","bd_PocketCare");
-	$sql = "SELECT imagen FROM alumnos WHERE id =  3";
+	$sql = "SELECT imagen FROM alumnos WHERE id =  4";
 	$sth = $db->query($sql);
 	$result=mysqli_fetch_array($sth);
 	echo '<img src= "data:image/jpeg;base64,'.base64_encode( $result['imagen'] ).' " width = "20%" heigth="20%"/>';

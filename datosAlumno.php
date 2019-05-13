@@ -46,11 +46,12 @@
 	$sql = "SELECT imagen FROM alumnos WHERE id =  '$_GET[elAid]'";
 	$sth = $db->query($sql);
 	$result=mysqli_fetch_array($sth);
-	echo '<img src= "data:image/jpeg;base64,'.base64_encode( $result['imagen'] ).' " width = "20%" heigth="20%"/>';?>
+	echo '<br><img src= "data:image/jpeg;base64,'.base64_encode( $result['imagen'] ).' " width = "20%" heigth="20%"/>';?>
 
 	<form action="guardarCambios.php" method="POST">
+		Camibiar imagen: <input name = "Imagen" type="file"><br>
 		<input type="hidden" id="Id" name="Id" value="<?php echo $consulta['0'];?>">
-		Nombre: <input id="Nombre" name="Nombre" type="text" value="<?php echo $consulta['2'];?>">
+		<br>Nombre: <input id="Nombre" name="Nombre" type="text" value="<?php echo $consulta['2'];?>">
 		Segundo nombre: <input name="Nombre2" type="text" value="<?php echo $consulta['3']; ?>">
 		Apellido paterno: <input name="Apellido" type="text" value="<?php echo $consulta['4']; ?>">
 		Apellido materno: <input name="Apellido2" type="text" value="<?php echo $consulta['5']; ?>">

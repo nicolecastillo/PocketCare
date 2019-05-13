@@ -2,8 +2,10 @@
 	require 'basedatos.php';
 	$message = '';
 	$aid = $_GET['resultado'];
-	$busqueda= $conn->query("SELECT * FROM alumnos INNER JOIN inscripciones ON (alumnos.id = inscripciones.IdAlumno) WHERE inscripciones.grupo = '$_GET[resultado]'");
-	$prueba = $busqueda->fetchAll(PDO::FETCH_ASSOC);
+	//$busqueda= $conn->query("SELECT * FROM alumnos INNER JOIN inscripciones ON (alumnos.id = inscripciones.IdAlumno) WHERE inscripciones.grupo = '$_GET[resultado]'");
+	//$prueba = $busqueda->fetchAll(PDO::FETCH_ASSOC);
+	$stmt = $conn->query("SELECT nombre FROM grupos WHERE id = '$_GET[resultado]'");
+	$nombre = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -61,8 +63,15 @@
 	<?php require 'partials/header.php'?>
 
 	<a href="index.php" ><img src="images/logo_1.png" alt="" /></a>
-	<h1>ALUMNOS</h1>
-
+	<h1><?php echo $nombre['nombre'];?></h1>
+	<form action="ListaAlumnos.php" method="post" nmae="formr1" id="cdr">
+		<h3>Buscar alumno</h3>
+		<p>
+			<input type="text" name="Busca" placeholder="Buscar...">
+			<input type="submit" name="Sub" value="buscar">
+		</p>
+	</form>
+	<h2>ALUMNOS</h2>
 	<table style="border:1px solid black; border-collapse: collapse;">
 		<thead>
 			<th width="500" style="border:1px solid black; border-collapse: collapse;">Nombre</th>
@@ -72,6 +81,14 @@
 		</thead>
 		<tbody>
 			<?php
+			$buscar="";
+			$buscar=$_POST['Busca'];
+			if($buscar != ''){
+				$busqueda = $conn->query("SELECT * FROM alumnos WHERE nombre LIKE '%".$buscar."%'");
+			}else{
+					$busqueda= $conn->query("SELECT * FROM alumnos INNER JOIN inscripciones ON (alumnos.id = inscripciones.IdAlumno) WHERE inscripciones.grupo = '$_GET[resultado]'");
+			}
+			$prueba = $busqueda->fetchAll(PDO::FETCH_ASSOC);
 			foreach ($prueba as $re)
 			{
 			?>

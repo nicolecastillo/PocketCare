@@ -1,8 +1,8 @@
 <?php
 	require 'basedatos.php';
 	$message = '';
-	$busqueda= $conn->query("SELECT * FROM alumnos");
-	$prueba = $busqueda->fetchAll(PDO::FETCH_ASSOC);
+	$buscar="";
+	$buscar=$_POST['Busca'];
 ?>
 
 <!DOCTYPE html>
@@ -19,6 +19,13 @@
 
 	<a href="index.php" ><img src="images/logo_1.png"/></a>
 	<h1>ALUMNOS</h1>
+	<form action="alumnos.php" method="post" id="cdr">
+		<h2>Buscar alumno</h2>
+		<p>
+			<input type="text" name="Busca">
+			<input type="submit" name="Sub" value="Buscar">
+		</p>
+	</form>
 
 	<table style="border:1px solid black; border-collapse: collapse;">
 		<thead>
@@ -30,6 +37,13 @@
 		</thead>
 		<tbody>
 			<?php
+			
+			if($buscar != ''){
+				$busqueda = $conn->query("SELECT * FROM alumnos WHERE nombre LIKE '%".$buscar."%'");
+			}else{
+				$busqueda= $conn->query("SELECT * FROM alumnos");
+			}
+			$prueba = $busqueda->fetchAll(PDO::FETCH_ASSOC);
 			foreach ($prueba as $re){	
 			?>
 				 <tr>
@@ -39,9 +53,7 @@
 					<td style="border:1px solid black; border-collapse: collapse;"><?php echo $re['APELLIDO']; ?></td>
 					<td style="border:1px solid black; border-collapse: collapse;"><?php echo $re['APELLIDO2']; ?></td>
 					<?php echo"<td><a href='datosAlumno.php?elAid=" . $re['ID'] . "'>Editar</a></td>"; ?>
-					<td>
-						<a href="#" onclick="preguntar(<?php echo  $re["ID"]; ?>)">Eliminar</a>
-					</td>
+					<td><a href="#" onclick="preguntar(<?php echo  $re["ID"]; ?>)">Eliminar</a></td>
 				</tr>		
 
 			<?php } ?>
