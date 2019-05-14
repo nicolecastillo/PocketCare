@@ -70,20 +70,27 @@
           if (!isset($_POST['eval'])){
                $_POST['eval'] = "No hay evaluacion";
           }
-
-              $texto = htmlspecialchars($_POST['eval']);
-              $sql = "UPDATE alumnos SET EVALUACIONDIARIA='$texto', WHERE ID='$ID'";
+              $texto = $_POST['eval'];
+              $sql = ("UPDATE alumnos SET EVALUACIONDIARIA='$texto' WHERE ID='$ID'");
               $stmt = $conn->prepare($sql);
               if($stmt->execute()){
                   $message ='La evaluacion se ha subido exitosamente';
+
               }else{
                   $message = 'Error al subir la evaluacion';
               }
 
         ?>
-        <form action="evaluacionDiaria.php" method="get">
-          <input  type="submit" value="Subir evaluacion">
+        <form action="evaluacionDiaria.php" method="get" >
+          <input  type="submit" value="Subir evaluacion" name="submit">
        </form>
+
+       <?php
+             if(isset($_POST['submit'])){
+                 header("Location: grupos.php");
+             }
+        ?>
+
     </form>
   </body>
   </html>

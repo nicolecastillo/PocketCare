@@ -71,6 +71,7 @@
 			<input type="submit" name="Sub" value="buscar">
 		</p>
 	</form>
+
 	<h2>ALUMNOS</h2>
 	<table style="border:1px solid black; border-collapse: collapse;">
 		<thead>
@@ -82,7 +83,7 @@
 		</thead>
 		<tbody>
 			<?php
-<<<<<<< HEAD
+
 			$buscar="";
 			$buscar=$_POST['Busca'];
 			if($buscar != ''){
@@ -91,9 +92,9 @@
 					$busqueda= $conn->query("SELECT * FROM alumnos INNER JOIN inscripciones ON (alumnos.id = inscripciones.IdAlumno) WHERE inscripciones.grupo = '$_GET[resultado]'");
 			}
 			$prueba = $busqueda->fetchAll(PDO::FETCH_ASSOC);
-=======
+
 			$valor;
->>>>>>> 5ee29086811bbf13322046affb0cc9ecb70a9e4b
+
 			foreach ($prueba as $re)
 			{
 				$valor = $re['ID'];
@@ -106,6 +107,7 @@
 					<td style="border:1px solid black; border-collapse: collapse;"><?php echo "<a href='evaluacionDiaria.php?identificador=$valor'>" . "Evaluar" . "</a>"; ?></td>
 				</tr>
 			<?php
+				
 			}
 			?>
 		</tbody>
