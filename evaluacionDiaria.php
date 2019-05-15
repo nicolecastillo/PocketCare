@@ -2,6 +2,15 @@
   require 'basedatos.php';
 	$message = '';
   $ID = $_GET['identificador'];
+  $stmt1 = $conn->query("SELECT nombre FROM alumnos WHERE id = '$ID'");
+	$nombre = $stmt1->fetch(PDO::FETCH_ASSOC);
+  $stmt2 = $conn->query("SELECT nombre2 FROM alumnos WHERE id = '$ID'");
+	$nombre2 = $stmt2->fetch(PDO::FETCH_ASSOC);
+  $stmt3 = $conn->query("SELECT apellido FROM alumnos WHERE id = '$ID'");
+	$apellido = $stmt3->fetch(PDO::FETCH_ASSOC);
+  $stmt4 = $conn->query("SELECT apellido2 FROM alumnos WHERE id = '$ID'");
+	$apellido2 = $stmt4->fetch(PDO::FETCH_ASSOC);
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -59,7 +68,20 @@
 	<?php require 'partials/header.php'?>
 
 	<a href="index.php" ><img src="images/logo_1.png" alt="" /></a>
-	<h1>Introduzca evaluacion: </h1>
+	<h1>
+  <?php
+      echo $nombre["nombre"];
+      echo " ";
+      echo $nombre2["nombre2"];
+      echo " ";
+      echo $apellido["apellido"];
+      echo " ";
+      echo $apellido2["apellido2"];
+    ?>
+  </h1>
+  <br>
+  Introduzca evaluacion:
+
   <form method="post">
 
         <textarea cols="50" rows="4" name="eval" type="text" ></textarea>
@@ -89,6 +111,8 @@
              if(isset($_POST['submit'])){
                  header("Location: grupos.php");
              }
+
+             echo "<a href='grupos.php'>" . "Regresar" . "</a>";
         ?>
 
     </form>
