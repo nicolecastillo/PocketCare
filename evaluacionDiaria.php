@@ -11,6 +11,11 @@
   $stmt4 = $conn->query("SELECT apellido2 FROM alumnos WHERE id = '$ID'");
 	$apellido2 = $stmt4->fetch(PDO::FETCH_ASSOC);
 
+  $db = mysqli_connect("localhost","root","","bd_PocketCare");
+	$sql = "SELECT imagen FROM alumnos WHERE id =  '$ID'";
+	$sth = $db->query($sql);
+	$imagen=mysqli_fetch_array($sth);
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -80,11 +85,13 @@
     ?>
   </h1>
   <br>
+  <?php echo '<br><img src= "data:image/jpeg;base64,'.base64_encode( $imagen['imagen'] ).' " width = "10%" heigth="10%"/>'; ?>
+  <br><br><br>
   Introduzca evaluacion:
 
   <form method="post">
 
-        <textarea cols="50" rows="4" name="eval" type="text" ></textarea>
+        <textarea cols="70" rows="8" name="eval" type="text" ></textarea>
         <br>
 
 
