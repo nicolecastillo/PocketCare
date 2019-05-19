@@ -44,7 +44,7 @@
 	<form action="login.php" method="POST"> 
 		<input type="text" name="usuario" placeholder="Ingrese su nombre de usuario">
 		<input type="password" name="contraseña" placeholder="Ingrese su contraseña">
-		<input type="submit" value="Enviar">
+		<input type="submit" value="Iniciar Sesión">
 	</form>
 	
 </body>
