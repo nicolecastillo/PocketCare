@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Calendario</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/moment.min.js"></script>
+	<!-- Full Calendar -->
+	<link rel="stylesheet" href="css/fullcalendar.min.css">
+	<script src="js/fullcalendar.min.js"></script>
+	<script src="js/es.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	
+	<script src="js/bootstrap-clockpicker.js"></script>
+	<link rel="stylesheet" href="css/bootstrap-clockpicker.css">
+
+</head>
+<body>
+
+	<header>
+		<a href="/PocketCare">Regresar</a>
+	</header>
+
+	<div class="container">
+		<div class="row">
+			<div class="col"></div>
+			<div class="col-7"></br></br><div id="Calendario"></div></div>
+			<div class="col"></div>
+		</div>
+	</div>
+	
+<script>
+	$(document).ready(function(){
+		$('#Calendario').fullCalendar({
+			header:{
+				left:'today,prev,next',
+				center:'title',
+				right:'month,basicWeek,basicDay,agendaWeek,agendaDay'
+			},
+			
+			events: 'http://localhost/PocketCare/eventos.php',
+
+			eventClick:function(calEvent,jsEvent,view){
+
+				// H2
+				$('#tituloEvento').html(calEvent.title);
+				// Mostrar la información del evento en los inputs
+				$('#txtDescripcion').val(calEvent.descripcion);
+				$('#txtID').val(calEvent.id);
+				$('#txtTitulo').val(calEvent.title);
+				$('#txtColor').val(calEvent.color);
+				FechaHora = calEvent.start._i.split(" ");
+				$('#txtFecha').val(FechaHora[0]);
+				$("#ModalEventos").modal();
+			},
+			editable:true,
+			eventDrop:function(calEvent){
+				$('#txtID').val(calEvent.id);
+				$('#txtTitulo').val(calEvent.title);
+				$('#txtColor').val(calEvent.color);
+				$('#txtDescripcion').val(calEvent.descripcion);
+				var fechaHora = calEvent.start.format().split("T");
+				$('#txtFecha').val(fechaHora[0]);
+				$('#txtHora').val(fechaHora[1]);
+				RecolectarDatosGUI();
+				EnviarInformacion('modificar', NuevoEvento, true);
+			}
+		});
+	});
+
+</script>	
+</body>
+</html>
