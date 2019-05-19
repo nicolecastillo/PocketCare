@@ -1,4 +1,4 @@
-<?php  
+<?php
 	session_start();
 
 	require 'basedatos.php';
@@ -26,7 +26,7 @@
 	<link rel="stylesheet" href="assets/css/main.css" />
 </head>
 <body>
-	
+
 	<?php if(!empty($user)): ?>
 <<<<<<< HEAD
 		<?php if($results['tipocuenta'] == 1): ?>
@@ -239,7 +239,7 @@
 								<div class="col-12">
 
 									<!-- Blog -->
-										
+
 								</div>
 							</div>
 						</div>
@@ -395,7 +395,7 @@
 								<ul>
 									<li class="current"><a href="index.php">Inicio</a></li>
 									<li><a href="calendarioPadre.html">Eventos</a></li>
-									<li><a href="hijo.php">Hijo</a></li>
+									<li><?php echo "<a href='hijo.php?miHijo=$user[nombreusuario]'>" . "Hijo" . "</a>"; ?></li>
 									<li><a href="logout.php">Salir</a></li>
 								</ul>
 							</nav>
@@ -553,7 +553,7 @@
 								<div class="col-12">
 
 									<!-- Blog -->
-										
+
 								</div>
 							</div>
 						</div>
@@ -715,7 +715,7 @@
 							</nav>
 
 						<!-- Banner -->
-							
+
 
 					</section>
 
@@ -731,7 +731,6 @@
 
 		</body>
 	<?php endif; ?>
-	
+
 </body>
 </html>
-

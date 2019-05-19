@@ -1,6 +1,8 @@
 <?php
   require 'basedatos.php';
 	$message = '';
+  $db = mysqli_connect("localhost","root","","bd_PocketCare");
+  
   $ID = $_GET['identificador'];
   $stmt1 = $conn->query("SELECT nombre FROM alumnos WHERE id = '$ID'");
 	$nombre = $stmt1->fetch(PDO::FETCH_ASSOC);
@@ -11,7 +13,7 @@
   $stmt4 = $conn->query("SELECT apellido2 FROM alumnos WHERE id = '$ID'");
 	$apellido2 = $stmt4->fetch(PDO::FETCH_ASSOC);
 
-  $db = mysqli_connect("localhost","root","","bd_PocketCare");
+
 	$sql = "SELECT imagen FROM alumnos WHERE id =  '$ID'";
 	$sth = $db->query($sql);
 	$imagen=mysqli_fetch_array($sth);
