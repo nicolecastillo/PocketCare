@@ -35,7 +35,7 @@
 	<?php require 'partials/header.php' ?>
 	<a href="index.php" ><img src="images/logo_1.png" alt="" /></a>
 	<h1>Login</h1>
-	<span><a href="signup.php">Sign Up</a></span>
+	<input type="reset" value="Sign Up" onclick="location='signup.php'">
 
 	<?php if(!empty($message)): ?>
       <p> <?= $message ?></p>
