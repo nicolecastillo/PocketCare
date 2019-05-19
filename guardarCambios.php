@@ -60,22 +60,7 @@ require 'basedatos.php';
 
 	function modificarAlumnoSinFoto($ida, $nom, $nom2, $ap, $ap2, $edad, $sangre, $aler){
 		require 'basedatos.php';
-		 $sentencia = "UPDATE alumnos SET nombre = '".$nom."', nombre2 = '".$nom2."', apellido = '".$ap."', apellido2 = '".$ap2."', edad = '".$edad."', tiposangre = '".$sangre."', alergias = '".$aler."' WHERE id = '".$ida."' ";
-		$conn->query($sentencia);
-	}
-	function modificarAlumnoConFoto($ida, $nom, $nom2, $ap, $ap2, $edad, $sangre, $aler, $foto){
-		require 'basedatos.php';
-		
-		$sentencia = "UPDATE alumnos
-		 	SET nombre = '".$nom."', 
-		 		nombre2 = '".$nom2."', 
-		 		apellido = '".$ap."', 
-		 		apellido2 = '".$ap2."', 
-		 		edad = '".$edad."', 
-		 		tiposangre = '".$sangre."', 
-		 		alergias = '".$aler."', 
-		 		IMAGEN = '".$imagen."' 
-		 	WHERE id = '".$ida."';";
+		 $sentencia = "UPDATE alumnos SET nombre = '".$nom."', nombre2 = '".$nom2."', apellido = ".$ap.", apellido2 = '".$ap2."', edad = '".$edad."', tiposangre = '".$sangre."', alergias = '".$aler."' WHERE id = '".$ida."' ";
 		$conn->query($sentencia);
 	}
 ?>
