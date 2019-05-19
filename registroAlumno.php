@@ -8,9 +8,9 @@
 
 		if($_POST['TipoSangre'] != 'A+' && $_POST['TipoSangre'] != 'A-' && $_POST['TipoSangre'] != 'AB+' && $_POST['TipoSangre'] != 'AB-' && $_POST['TipoSangre'] != 'O+' && $_POST['TipoSangre'] != 'O-' && $_POST['TipoSangre'] != 'B-' && $_POST['TipoSangre'] != 'B+'){
 			$message = 'Tipo de sangre no válido (Utilice letras mayúsculas)';
-    if ($_POST['Edad'] > 12) {
-      $message = 'Edad no válida (La edad máxima son 12 años)';
-    }
+			    if ($_POST['Edad'] > 12) {
+			      $message = 'Edad no válida (La edad máxima son 12 años)';
+			    }
 		}else{
 			$sql = "INSERT INTO alumnos (imagen, nombre, nombre2, apellido, apellido2, edad, tiposangre, alergias) VALUES('$_POST[Imagen]', '$_POST[Nombre]', '$_POST[Nombre2]', '$_POST[Apellido]', '$_POST[Apellido2]', '$_POST[Edad]', '$_POST[TipoSangre]', '$_POST[Alergias]')";
 
