@@ -394,7 +394,7 @@
 							<nav id="nav">
 								<ul>
 									<li class="current"><a href="index.php">Inicio</a></li>
-									<li><a href="left-sidebar.html">Eventos</a></li>
+									<li><a href="calendarioPadre.html">Eventos</a></li>
 									<li><a href="hijo.php">Hijo</a></li>
 									<li><a href="logout.php">Salir</a></li>
 								</ul>
