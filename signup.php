@@ -16,14 +16,8 @@
 	<a href="index.php" ><img src="images/logo_1.png" alt="" /></a>
 
 	<h1>¿Como quiere registrarse?</h1>
-	<form action="signup.php" method="POST">
-		<nav>
-			<ul>
-				<li><a href="registroPadre.php">Padre</a></li>
-				<li><a href="registroMaestro.php">Maestro</a></li>
-			</ul>
-		</nav> 
-	</form>
+	<br><input type="submit" value="Padre" onclick="location='registroPadre.php'">
+	<br><input type="submit" value="Maestro" onclick="location='registroMaestro.php'">
 	
 </body>
 </html>
