@@ -17,8 +17,8 @@ $m->isSMTP();
 $m->SMTPAuth = true;
 
 $m->Host = "smtp.gmail.com";
-$m->Username = "PocketCareSA@gmail.com"; //No hagas muchas pruebas el mismo dia ya que puede que te bloqueen la cuenta. Este correo lo cree especialmente para usarla todos.
-$m->Password = "cuidar123"; // Intentar no moverle al codigo ya que batalle para funcionara y no se exactamente que hice para que funcionara, pero lo hace
+$m->Username = "PocketCareSA@gmail.com"; 
+$m->Password = "cuidar123";
 $m->SMTPSecure = "tls";
 $m->Port = "587";
 
