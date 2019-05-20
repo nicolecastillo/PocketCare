@@ -14,7 +14,7 @@
 	</style>
 </head>
 <body>
-	<form style="align-items: center;" method="post" action="correo.php">
+	<form method="post" action="correo.php">
 
 		<label for="to">Para:</label>
 		<input type="text" name="to" id="to"><br><br>
