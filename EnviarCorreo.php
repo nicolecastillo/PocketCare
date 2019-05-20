@@ -14,17 +14,19 @@
 	</style>
 </head>
 <body>
-	<form method="post" action="correo.php">
+	<div style="text-align:center;">
+		<a href="index.php" ><img src="images/logo_1.png" alt="" /></a>
+		<h1>Correo</h1>
+		<form method="post" action="correo.php">
+			<p><label for="to">Para:</label>
+			<input type="email" multiple autofocus required name="to" id="to" placeholder="ejemplo@email.com"></p>
 
-		<label for="to">Para:</label>
-		<input type="text" name="to" id="to"><br><br>
+			<p><label for="asunto">Asunto:</label>
+			<input type="text" required name="asunto" id="asunto"></p>
 
-		<label for="asunto">Asunto:</label>
-		<input type="text" name="asunto" id="asunto"><br><br>
-		
-		<input type="reset" value="Cancelar" onclick="window.close();">
-		<input type="submit" value="Enviar">
-	</form>
-
+			<p><input type="submit" value="Cancelar" onclick="window.close();">
+			<input type="submit" value="Enviar"></p>
+		</form>
+	</div>
 </body>
 </html>
