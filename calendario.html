@@ -138,21 +138,28 @@
 </div>
 
 <script>
+	
+function ventanaNueva(){	
+	window.open('EnviarCorreo.php');
+}
 
 var NuevoEvento;
 
 $('#btnAgregar').click(function(){
 	RecolectarDatosGUI();
+	ventanaNueva();
 	EnviarInformacion('agregar', NuevoEvento);	
 });
 
 $('#btnEliminar').click(function(){
 	RecolectarDatosGUI();
+	ventanaNueva();
 	EnviarInformacion('eliminar', NuevoEvento);	
 });
 
 $('#btnModificar').click(function(){
 	RecolectarDatosGUI();
+	ventanaNueva();
 	EnviarInformacion('modificar', NuevoEvento);	
 });
 
