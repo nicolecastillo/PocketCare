@@ -21,7 +21,8 @@
 
 		<label for="asunto">Asunto:</label>
 		<input type="text" name="asunto" id="asunto"><br><br>
-
+		
+		<input type="reset" value="Cancelar" onclick="window.close();">
 		<input type="submit" value="Enviar">
 	</form>
 
