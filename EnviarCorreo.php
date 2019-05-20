@@ -2,7 +2,12 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Document</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<script src="./javascripts/application.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<title>Correos</title>
 
 	<style>
 	label{
@@ -24,8 +29,8 @@
 			<p><label for="asunto">Asunto:</label>
 			<input type="text" required name="asunto" id="asunto"></p>
 
-			<p><input type="submit" value="Cancelar" onclick="window.close();">
-			<input type="submit" value="Enviar"></p>
+			<p><input type="submit" value="Cancelar" onclick="window.close();"></p>
+			<p><input type="submit" value="Enviar"></p>
 		</form>
 	</div>
 </body>
