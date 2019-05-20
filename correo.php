@@ -43,12 +43,12 @@ $m->addAddress($para, 'Usuario');
 if($m->send()){?>
 	<script type="text/javascript">
 		alert("Enviado...");
-		window.location.href = "index.php";
+		window.close();;
 	</script>
 <?php }else{ ?>
 	<script type="text/javascript">
 		alert(<?php echo $m->ErrorInfo; ?>);
-		window.location.href = "index.php";
+		window.close();
 	</script>
 <?php }
 
