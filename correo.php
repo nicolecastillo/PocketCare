@@ -9,7 +9,7 @@ use PHPMailer\PHPMailer\Exception;
 
 $para = $_POST['to'];
 $asunto = $_POST['asunto'];
-$mensaje = $_POST['mensaje'];
+
  
 $m = new PHPMailer;
 
@@ -34,7 +34,7 @@ $m->isHTML();
 
 
 $m->Subject = $asunto;
-$m->Body = $mensaje;
+$m->Body = '<h2>Hola, se ha realizado una modificacion en el calendario de PocketCare. <br>Visitar PocketCare para checar los cambios.</h2>';
 
 $m->FromName = "PocketCare";
 
