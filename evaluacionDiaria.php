@@ -2,7 +2,7 @@
   require 'basedatos.php';
 	$message = '';
   $db = mysqli_connect("localhost","root","","bd_PocketCare");
-  
+
   $ID = $_GET['identificador'];
   $stmt1 = $conn->query("SELECT nombre FROM alumnos WHERE id = '$ID'");
 	$nombre = $stmt1->fetch(PDO::FETCH_ASSOC);
@@ -74,7 +74,7 @@
 <body>
 	<?php require 'partials/header.php'?>
 
-	<a href="index.php" ><img src="images/logo_1.png" alt="" /></a>
+<!--	<a href="index.php" ><img src="images/logo_1.png" alt="" /></a>   -->
 	<h1>
   <?php
       echo $nombre["nombre"];
