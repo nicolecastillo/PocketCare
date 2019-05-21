@@ -51,7 +51,7 @@
 
 					<!-- Logo -->
 						<h1>
-							<a href="index.html"><?php echo $nombre['nombre']; echo " "; echo $nombre2['nombre2'];  echo " "; echo $apellido['apellido'];  echo " "; echo $apellido2['apellido2'];  echo " ";?></a>
+							<a><?php echo $nombre['nombre']; echo " "; echo $nombre2['nombre2'];  echo " "; echo $apellido['apellido'];  echo " "; echo $apellido2['apellido2'];  echo " ";?></a>
 						</h1>
 
 
