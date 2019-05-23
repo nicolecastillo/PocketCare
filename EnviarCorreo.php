@@ -29,8 +29,8 @@
 			<p><label for="asunto">Asunto:</label>
 			<input type="text" required name="asunto" id="asunto"></p>
 
-			<p><input type="submit" style="background-color: rgb(239,83,73);" value="Cancelar" onclick="window.close();"></p>
 			<p><input type="submit" value="Enviar"></p>
+			<p><input type="submit" style="background-color: rgb(218,218,218);" value="Cancelar" onclick="window.close();"></p>
 		</form>
 	</div>
 </body>
