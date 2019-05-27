@@ -52,7 +52,7 @@
 		</table>
 	</div>
 
-	<br><input type="submit" value="Registrar Grupo" onclick="Location:'registroGrupo.php'">
+	<br><input type="submit" value="Registrar Grupo" onclick="location='registroGrupo.php'">
 
 	<script type="text/javascript">
 		function preguntar(id){
