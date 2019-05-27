@@ -23,7 +23,6 @@
 			<caption>Grupos Activos</caption>
 			<thead>
 				<tr>
-					<th width="100">ID</th>
 					<th width="250">Grupo</th>
 					<th width="100">Alumnos</th>
 					<th width="100">Eventos</th>
@@ -38,7 +37,6 @@
 						$valor = $_POST['ID'];
 				?>
 						<tr >
-							<td><?php echo $_POST["ID"];?></td>
 							<td><?php echo "<a href='ListaAlumnos.php?resultado=$valor'>" . $_POST["NOMBRE"] . "</a>"; ?></td>
 							<td><?php echo $_POST["ALUMNOS"];?></td>
 							<td><?php echo $_POST["EVENTOS"];?></td>
@@ -54,12 +52,7 @@
 		</table>
 	</div>
 
-	<form action="grupos.php" method="POST">
-		<nav>
-				<a href="registroGrupo.php">Registrar grupo</a></li>
-
-		</nav>
-	</form>
+	<br><input type="submit" value="Registrar Grupo" onclick="Location:'registroGrupo.php'">
 
 	<script type="text/javascript">
 		function preguntar(id){
