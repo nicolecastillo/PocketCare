@@ -41,7 +41,7 @@
 							<td><?php echo $_POST["ALUMNOS"];?></td>
 							<td><?php echo $_POST["EVENTOS"];?></td>
 							<td>
-								<a href="#" onclick="preguntar(<?php echo  $_POST["ID"]; ?>)">Eliminar</a>
+								<input type="reset" value="Eliminar" onclick="preguntar(<?php echo  $_POST["ID"]; ?>)"></span>
 							</td>
 						</tr>
 						<?php
