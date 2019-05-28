@@ -79,7 +79,7 @@
 			<th width="500" style="border:1px solid black; border-collapse: collapse;">Segundo nombre</th>
 			<th width="500" style="border:1px solid black; border-collapse: collapse;">Apellido paterno</th>
 			<th width="500" style="border:1px solid black; border-collapse: collapse;">Apellido materno</th>
-			<th width="500" style="border:1px solid black; border-collapse: collapse;">Evaluacion</th>
+			<th width="500" style="border:1px solid black; border-collapse: collapse;">Evaluación</th>
 		</thead>
 		<tbody>
 			<?php
@@ -116,7 +116,7 @@
 		</tbody>
 	</table>
 
-	<button id="btn1">Agregar alumno al grupo</button>
+	<br><input type="submit" id="btn1" value="Agregar alumno al grupo">
 
 	<div id ="myModal" class="modal">
 		<div class="modal-content">
