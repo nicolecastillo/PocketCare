@@ -24,7 +24,7 @@
 		<h1>Correo</h1>
 		<form method="post" action="correo.php">
 			<p><label for="to">Para:</label>
-			<input type="email" multiple autofocus required name="to" id="to" placeholder="ejemplo@email.com"></p>
+			<input type="text" autofocus required name="to" id="to" placeholder="ejemplo@email.com"></p>
 
 			<p><label for="asunto">Asunto:</label>
 			<input type="text" required name="asunto" id="asunto"></p>
