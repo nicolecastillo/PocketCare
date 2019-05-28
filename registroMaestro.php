@@ -42,7 +42,7 @@
 	<?php endif; ?>
 
 	<h1>Registrar maestro</h1>
-	<span>o <a href="Login.php">Login</a></span>
+	<span>o <input type="reset" value="Login" onclick="location='login.php'"></span>
 
 	<form action="registroMaestro.php" method="POST">
 		<input name="Nombre" type="text" placeholder="Primer nombre">
