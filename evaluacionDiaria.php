@@ -108,21 +108,20 @@
                   $message ='La evaluacion se ha subido exitosamente';
 
               }else{
-                  $message = 'Error al subir la evaluacion';
+                  $message = 'Error al subir la evaluación';
               }
 
         ?>
         <form action="evaluacionDiaria.php" method="get" >
-          <input  type="submit" value="Subir evaluacion" name="submit">
+          <input  type="submit" value="Subir evaluación" name="submit">
        </form>
 
        <?php
              if(isset($_POST['submit'])){
                  header("Location: grupos.php");
              }
-
-             echo "<a href='grupos.php'>" . "Regresar" . "</a>";
         ?>
+	  <br><input type="submit" value="Regresar" onclick="location='grupos.php'">
 
     </form>
   </body>
