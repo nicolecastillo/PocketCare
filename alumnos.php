@@ -1,8 +1,12 @@
 <?php
 	require 'basedatos.php';
 	$message = '';
-	$buscar="";
-	$buscar=$_POST['Busca'];
+	if(empty($_POST['Busca'])){
+		$buscar = "";
+	}else{
+		$buscar = $_POST['Busca'];
+	}
+	
 ?>
 
 <!DOCTYPE html>
