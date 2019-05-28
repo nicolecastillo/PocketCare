@@ -83,9 +83,12 @@
 		</thead>
 		<tbody>
 			<?php
-
-			$buscar="";
-			$buscar=$_POST['Busca'];
+			if(empty($_POST['Busca'])){
+				$buscar = "";
+			}else{
+				$buscar=$_POST['Busca'];
+			}			
+			
 			if($buscar != ''){
 				$busqueda = $conn->query("SELECT * FROM alumnos WHERE nombre LIKE '%".$buscar."%'");
 			}else{
