@@ -57,7 +57,7 @@
 					<td style="border:1px solid black; border-collapse: collapse;"><?php echo $re['APELLIDO']; ?></td>
 					<td style="border:1px solid black; border-collapse: collapse;"><?php echo $re['APELLIDO2']; ?></td>
 					<?php echo"<td><a href='datosAlumno.php?elAid=" . $re['ID'] . "'>Editar</a></td>"; ?>
-					<td><a href="#" onclick="preguntar(<?php echo  $re["ID"]; ?>)">Eliminar</a></td>
+					<td><input type="button" value="Eliminar" onclick="preguntar(<?php echo  $re["ID"]; ?>)">
 				</tr>		
 
 			<?php } ?>
