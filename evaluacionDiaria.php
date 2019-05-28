@@ -89,7 +89,7 @@
   <br>
   <?php echo '<br><img src= "data:image/jpeg;base64,'.base64_encode( $imagen['imagen'] ).' " width = "10%" heigth="10%"/>'; ?>
   <br><br><br>
-  Introduzca evaluacion:
+  Introduzca evaluación:
 
   <form method="post">
 
@@ -99,13 +99,13 @@
 
         <?php
           if (!isset($_POST['eval'])){
-               $_POST['eval'] = "No hay evaluacion";
+               $_POST['eval'] = "No hay evaluación";
           }
               $texto = $_POST['eval'];
               $sql = ("UPDATE alumnos SET EVALUACIONDIARIA='$texto' WHERE ID='$ID'");
               $stmt = $conn->prepare($sql);
               if($stmt->execute()){
-                  $message ='La evaluacion se ha subido exitosamente';
+                  $message ='La evaluación se ha subido exitosamente';
 
               }else{
                   $message = 'Error al subir la evaluación';
