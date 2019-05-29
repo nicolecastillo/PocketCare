@@ -2,8 +2,6 @@
 	require 'basedatos.php';
 	$message = '';
 	$aid = $_GET['resultado'];
-	//$busqueda= $conn->query("SELECT * FROM alumnos INNER JOIN inscripciones ON (alumnos.id = inscripciones.IdAlumno) WHERE inscripciones.grupo = '$_GET[resultado]'");
-	//$prueba = $busqueda->fetchAll(PDO::FETCH_ASSOC);
 	$stmt = $conn->query("SELECT nombre FROM grupos WHERE id = '$_GET[resultado]'");
 	$nombre = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
@@ -161,6 +159,7 @@
 					}
 				?>
 				<form action="ListaAlumnos.php" method="get">
+					<br>
 					<input type="submit" name="submit" value="Agregar">
 				</form>
 			</form>

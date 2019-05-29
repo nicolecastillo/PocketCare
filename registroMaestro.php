@@ -4,16 +4,20 @@
 
 	if(!empty($_POST['Nombre']) && !empty($_POST['Apellido']) && !empty($_POST['Apellido2']) && !empty($_POST['usuario']) && !empty($_POST['contraseña']) && !empty($_POST['codigoEscuela'])){
 
-		if($_POST['codigoEscuela'] != '1691'){
-			$message = 'Cogido de escuela incorrecto.';
+		if(strlen($_POST['contraseña']) < 6){
+			$message = 'La constraseña debe ser mayor a 6 caracteres.';
 		}else{
-			$sql = "INSERT INTO cuentas (tipocuenta, nombre, nombre2, apellido, apellido2, nombreusuario, contrasena) VALUES('1', '$_POST[Nombre]', '$_POST[Nombre2]', '$_POST[Apellido]', '$_POST[Apellido2]', '$_POST[usuario]', '$_POST[contraseña]')";
-
-			$stmt = $conn->prepare($sql);
-			if($stmt->execute()){
-				$message = 'Usuario registrado exitosamente!';
+			if($_POST['codigoEscuela'] != '1691'){
+				$message = 'Cogido de escuela incorrecto.';
 			}else{
-				$message = 'Error :(';
+				$sql = "INSERT INTO cuentas (tipocuenta, nombre, nombre2, apellido, apellido2, nombreusuario, contrasena) VALUES('1', '$_POST[Nombre]', '$_POST[Nombre2]', '$_POST[Apellido]', '$_POST[Apellido2]', '$_POST[usuario]', '$_POST[contraseña]')";
+
+				$stmt = $conn->prepare($sql);
+				if($stmt->execute()){
+					$message = 'Usuario registrado exitosamente!';
+				}else{
+					$message = 'Error :(';
+				}
 			}
 		}
 	}

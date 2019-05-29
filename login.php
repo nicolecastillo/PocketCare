@@ -32,7 +32,6 @@
 </head>
 <body>
 
-	<?php require 'partials/header.php' ?>
 	<a href="index.php" ><img src="images/logo_1.png" alt="" /></a>
 	<h1>Login</h1>
 	<input type="reset" value="Sign Up" onclick="location='signup.php'">

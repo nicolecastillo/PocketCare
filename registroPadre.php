@@ -5,21 +5,25 @@
 
 	if(!empty($_POST['Nombre']) && !empty($_POST['Apellido']) && !empty($_POST['Apellido2']) && !empty($_POST['usuario']) && !empty($_POST['contraseña']) && !empty($_POST['idHijo']) && !empty($_POST['email'])){
 
-		$sql = "SELECT * FROM alumnos WHERE id = '$_POST[idHijo]'";
-		$stmt = $conn->prepare($sql);
-		$stmt->execute();
-		$resul = $stmt->fetchAll();
-		if($resul != NULL){
-			$sql = "INSERT INTO cuentas (tipocuenta, nombre, nombre2, apellido, apellido2, nombreusuario, contrasena, hijos, correo) VALUES('0', '$_POST[Nombre]', '$_POST[Nombre2]', '$_POST[Apellido]', '$_POST[Apellido2]', '$_POST[usuario]', '$_POST[contraseña]', '$_POST[idHijo]', '$_POST[email]')";
-
-			$stmt = $conn->prepare($sql);
-			if($stmt->execute()){
-				$message = 'Usuario registrado exitosamente!';
-			}else{
-				$message = 'Error :(';
-			}
+		if(strlen($_POST['contraseña']) < 6){
+			$message = 'La constraseña debe ser mayor a 6 caracteres.';
 		}else{
-			$message = 'Error. El ID de su hijo es incorrecto';
+			$sql = "SELECT * FROM alumnos WHERE id = '$_POST[idHijo]'";
+			$stmt = $conn->prepare($sql);
+			$stmt->execute();
+			$resul = $stmt->fetchAll();
+			if($resul != NULL){
+				$sql = "INSERT INTO cuentas (tipocuenta, nombre, nombre2, apellido, apellido2, nombreusuario, contrasena, hijos, correo) VALUES('0', '$_POST[Nombre]', '$_POST[Nombre2]', '$_POST[Apellido]', '$_POST[Apellido2]', '$_POST[usuario]', '$_POST[contraseña]', '$_POST[idHijo]', '$_POST[email]')";
+
+				$stmt = $conn->prepare($sql);
+				if($stmt->execute()){
+					$message = 'Usuario registrado exitosamente!';
+				}else{
+					$message = 'Error :(';
+				}
+			}else{
+				$message = 'Error. El ID de su hijo es incorrecto';
+			}
 		}
 	}
 ?>
